@@ -49,9 +49,6 @@ export default function Organizacion() {
             <h1 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-blue-main via-primary-600 to-red-main bg-clip-text text-transparent">
               Organización del Proyecto
             </h1>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
-              Conoce la estructura institucional y el contexto de trabajo de la Subsecretaría
-            </p>
           </div>
 
           {/* Contexto Institucional */}

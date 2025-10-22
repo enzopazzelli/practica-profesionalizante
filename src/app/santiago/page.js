@@ -43,9 +43,9 @@ export default function SantiagoPage() {
             <h1 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-yellow-accent via-red-main to-blue-main bg-clip-text text-transparent">
               Santiago del Estero
             </h1>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-neutral-700 max-w-3xl mx-auto">
               Geografía y Desafíos Territoriales
-            </p>
+            </h2>
           </div>
 
           {/* Descripción Principal */}
@@ -113,12 +113,12 @@ export default function SantiagoPage() {
             </p>
             <div className="overflow-x-auto rounded-xl border border-neutral-200">
               <table className="min-w-full bg-white">
-                <thead className="bg-gradient-to-r from-blue-main to-primary-600 text-white">
+                <thead className="bg-neutral-100">
                   <tr>
-                    <th className="py-4 px-6 text-left text-sm font-bold uppercase tracking-wider">Departamento</th>
-                    <th className="py-4 px-6 text-left text-sm font-bold uppercase tracking-wider">Población (2022)</th>
-                    <th className="py-4 px-6 text-left text-sm font-bold uppercase tracking-wider">Cabecera</th>
-                    <th className="py-4 px-6 text-left text-sm font-bold uppercase tracking-wider">Otras Localidades y Municipios</th>
+                    <th className="py-4 px-6 text-left text-base font-bold text-black-main">Departamento</th>
+                    <th className="py-4 px-6 text-left text-base font-bold text-black-main">Población (2022)</th>
+                    <th className="py-4 px-6 text-left text-base font-bold text-black-main">Cabecera</th>
+                    <th className="py-4 px-6 text-left text-base font-bold text-black-main">Otras Localidades y Municipios</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-neutral-200">

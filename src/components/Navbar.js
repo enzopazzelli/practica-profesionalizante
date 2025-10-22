@@ -1,11 +1,13 @@
 'use client';
 
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const navLinks = [
     { href: "/", label: "Inicio" },
@@ -42,15 +44,22 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="px-3 py-2 text-neutral-700 hover:text-neutral-900 font-medium rounded-lg hover:bg-neutral-100 transition-all duration-200"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`px-3 py-2 font-medium rounded-lg transition-all duration-200 ${
+                    isActive
+                      ? 'bg-blue-main text-white'
+                      : 'text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Mobile menu button */}
@@ -73,16 +82,23 @@ export default function Navbar() {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="lg:hidden pb-4 space-y-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="block px-4 py-3 text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100 rounded-lg font-medium transition-all duration-200"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`block px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
+                    isActive
+                      ? 'bg-blue-main text-white'
+                      : 'text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
         )}
       </div>
