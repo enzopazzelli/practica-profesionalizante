@@ -52,7 +52,7 @@ export default function Navbar() {
                   href={link.href}
                   className={`px-3 py-2 font-medium rounded-lg transition-all duration-200 ${
                     isActive
-                      ? 'bg-blue-main text-white'
+                      ? 'bg-blue-100 text-neutral-900'
                       : 'text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100'
                   }`}
                 >
@@ -91,7 +91,7 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className={`block px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
                     isActive
-                      ? 'bg-blue-main text-white'
+                      ? 'bg-blue-100 text-neutral-900'
                       : 'text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100'
                   }`}
                 >
