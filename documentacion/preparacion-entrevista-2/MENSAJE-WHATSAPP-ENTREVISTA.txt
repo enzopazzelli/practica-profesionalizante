@@ -1,0 +1,19 @@
+Hola! 👋
+
+Somos estudiantes del ITSE y estamos trabajando en un proyecto sobre el programa de vivienda social de la Subsecretaría.
+
+Te contactamos para coordinar una entrevista (30-35 min) donde nos gustaría que nos cuentes cómo funciona el proceso actual de gestión de datos - desde que reciben un caso hasta que llega a GEDO.
+
+📋 NO es una evaluación, solo queremos:
+• Documentar el proceso real en un diagrama
+• Identificar oportunidades de mejora
+• Proponer un dashboard de visualización
+
+🗓️ ¿Tendrías disponibilidad para una videollamada/reunión pronto?
+
+Te adjuntamos un documento con más detalles de los temas que abordaremos, para que puedas ir preparándote si querés.
+
+Cualquier duda, avisanos!
+
+Muchas gracias 🙏
+Equipo ITSE

@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+:root {
+  /* Colores de Santiago del Estero */
+  --red-main: #c32026;
+  --blue-main: #0093d3;
+  --yellow-accent: #fdb813;
+  --black-main: #000000;
+  --white-main: #FFFFFF;
+
+  /* Escalas de neutral */
+  --color-neutral-50: hsl(220, 10%, 98%);
+  --color-neutral-100: hsl(220, 10%, 95%);
+  --color-neutral-200: hsl(220, 10%, 90%);
+  --color-neutral-300: hsl(220, 10%, 80%);
+  --color-neutral-400: hsl(220, 10%, 60%);
+  --color-neutral-500: hsl(220, 10%, 40%);
+  --color-neutral-600: hsl(220, 10%, 30%);
+  --color-neutral-700: hsl(220, 10%, 20%);
+  --color-neutral-800: hsl(220, 10%, 15%);
+  --color-neutral-900: hsl(220, 10%, 10%);
+}
+
+@layer base {
+  * {
+    @apply border-neutral-200;
+  }
+
+  body {
+    @apply bg-neutral-50 text-neutral-900;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Utilidades personalizadas */
+.bg-red-main {
+  background-color: var(--red-main);
+}
+
+.bg-blue-main {
+  background-color: var(--blue-main);
+}
+
+.bg-yellow-accent {
+  background-color: var(--yellow-accent);
+}
+
+.text-red-main {
+  color: var(--red-main);
+}
+
+.text-blue-main {
+  color: var(--blue-main);
+}
+
+.text-yellow-accent {
+  color: var(--yellow-accent);
+}
+
+.border-red-main {
+  border-color: var(--red-main);
+}
+
+.border-blue-main {
+  border-color: var(--blue-main);
+}
+
+.border-yellow-accent {
+  border-color: var(--yellow-accent);
+}
+
+.hover\:bg-blue-600:hover {
+  background-color: #0077a8;
+}
+
+.hover\:bg-neutral-200:hover {
+  background-color: var(--color-neutral-200);
+}
+
+.hover\:bg-neutral-300:hover {
+  background-color: var(--color-neutral-300);
+}
+
+.hover\:bg-neutral-800:hover {
+  background-color: var(--color-neutral-800);
+}

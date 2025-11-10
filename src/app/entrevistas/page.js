@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 
 export default function Entrevistas() {
   const [showModal, setShowModal] = useState(false);
+  const [showModal2, setShowModal2] = useState(false);
 
   const interviewContent = `
 # Entrevista – Subsecretaría de Vivienda / Programa de Desarrollo Social
@@ -69,47 +70,135 @@ Nosotros sólo controlamos, o cofinanciamos, la construcción.
 
 Además, las instituciones deben estar al día con los **requisitos administrativos y legales**, como documentación con bancos, la Dirección de Personas Jurídicas y el sistema del ARCA, que son exigidos antes de la aprobación del proyecto.
 
-**Entrevistador/a:**  
+**Entrevistador/a:**
 ¿Todos esos datos se manejan en el mismo sistema local?
 
-**Entrevistado/a:**  
-Exactamente. Todo el ingreso de los datos, las documentaciones, se carga aquí.  
-Después salimos al territorio y trabajamos en el mismo sistema.  
+**Entrevistado/a:**
+Exactamente. Todo el ingreso de los datos, las documentaciones, se carga aquí.
+Después salimos al territorio y trabajamos en el mismo sistema.
 Cada expediente tiene un número, y ahí se carga toda la información asociada.
 
-**Entrevistador/a:**  
+**Entrevistador/a:**
 ¿Y en base a esos datos, definen los sectores donde actuar?
 
-**Entrevistado/a:**  
+**Entrevistado/a:**
 No, eso se trabaja en oficina. Vamos viendo dónde fortalecer más la acción, según los casos que van llegando.
 
-**Entrevistador/a:**  
+**Entrevistador/a:**
 Otra pregunta: ¿de qué manera las condiciones del territorio influyen en el registro y uso de los datos? Por ejemplo, en lugares con poca señal o muy alejados.
 
-**Entrevistado/a:**  
-Mirá, antes teníamos una aplicación que lograba sacar la coordenada aproximada. En otra, se cargaban los datos y quedaban guardados en el teléfono hasta que tomaba señal; recién ahí se enviaban.  
-Eso era muy útil, porque además me permitía controlar al técnico: podía ver que efectivamente estaba en ese lugar, ese día y a esa hora.  
-La app tomaba automáticamente fecha, hora y coordenadas.  
+**Entrevistado/a:**
+Mirá, antes teníamos una aplicación que lograba sacar la coordenada aproximada. En otra, se cargaban los datos y quedaban guardados en el teléfono hasta que tomaba señal; recién ahí se enviaban.
+Eso era muy útil, porque además me permitía controlar al técnico: podía ver que efectivamente estaba en ese lugar, ese día y a esa hora.
+La app tomaba automáticamente fecha, hora y coordenadas.
 Ahora lo hacemos de otra forma: sacamos la coordenada, hacemos captura de pantalla, y todo eso se sube como un PDF al expediente, con la foto y los datos relevados.
 
-**Entrevistador/a:**  
+**Entrevistador/a:**
 ¿Y qué pasa si los datos no se cargan bien?
 
-**Entrevistado/a:**  
-Si se carga mal, se carga mal (risas).  
-A veces pasa: ves una cosa en el sistema electrónico y otra en la base interna.  
-Ahí se corrige, pero es complicado, porque en el **GEDO** (sistema electrónico oficial) no se puede editar; queda como impreso.  
-En nuestra base de datos sí podemos corregir.  
-Por ejemplo, si un técnico marca “1A” y en realidad era “4A”, se ajusta desde acá.  
+**Entrevistado/a:**
+Si se carga mal, se carga mal (risas).
+A veces pasa: ves una cosa en el sistema electrónico y otra en la base interna.
+Ahí se corrige, pero es complicado, porque en el **GEDO** (sistema electrónico oficial) no se puede editar; queda como impreso.
+En nuestra base de datos sí podemos corregir.
+Por ejemplo, si un técnico marca "1A" y en realidad era "4A", se ajusta desde acá.
 A veces incluso pasa que en el **VISOC**, que es nuestro sistema local, figura una clasificación distinta, y eso hay que rectificarlo manualmente para mantener coherencia.
 
-**Entrevistador/a:**  
+**Entrevistador/a:**
 ¿Qué tipo de mejoras o herramientas tecnológicas consideran necesarias para optimizar el trabajo?
 
-**Entrevistado/a:**  
-Nos gustaría contar con una **aplicación que permita cargar los datos desde el lugar del relevamiento y exportarlos sin errores**, incluso sin señal.  
-También que **muestre las ubicaciones registradas por los técnicos** para poder hacer estimaciones, controles y auditorías del trabajo en territorio.  
+**Entrevistado/a:**
+Nos gustaría contar con una **aplicación que permita cargar los datos desde el lugar del relevamiento y exportarlos sin errores**, incluso sin señal.
+También que **muestre las ubicaciones registradas por los técnicos** para poder hacer estimaciones, controles y auditorías del trabajo en territorio.
 La idea es que la herramienta permita una visualización geográfica más precisa, evitando transcripciones manuales y facilitando la integración con los sistemas GEDO y VISOC.
+`;
+
+  const interview2Content = `
+# Entrevista con Técnico de Campo – Proceso Operativo y Requerimientos
+
+**Entrevistador/a:**
+¿Cómo comienza el proceso completo cuando una familia solicita una vivienda social?
+
+**Técnico:**
+El proceso comienza cuando una ONG o municipio envía toda la documentación por correo electrónico a nuestra área. Se crea un expediente electrónico que se envía al IPVU para verificar que la familia no tenga otro beneficio de vivienda. Una vez que regresa confirmado, se me asigna el expediente como técnico de la zona. Realizo la visita a la familia, genero el informe técnico, lo cargo en GEDO y pasa al área administrativa. Ellos revisan que esté correcto y lo envían al Subsecretario, quien lo eleva al Ministro. Si todo está en orden, el Ministro autoriza y Economía deposita el dinero a la institución para comprar materiales y construir la vivienda.
+
+**Entrevistador/a:**
+¿Qué sistemas utilizás actualmente para tu trabajo?
+
+**Técnico:**
+Uso Word, Excel, VISOC y GEDO. La información de campo la paso a una computadora con un Excel personal para organizarme, aunque no todos los compañeros lo hacen así. En Word hago el informe fotográfico de la visita. En VISOC realizo la clasificación de la vivienda, cargo las coordenadas y genero la planilla técnica con las fotos. El GEDO es donde nos llegan los expedientes y donde adjunto el informe técnico completo en PDF para que siga su curso administrativo.
+
+**Entrevistador/a:**
+¿Cómo se relacionan VISOC y GEDO?
+
+**Técnico:**
+No hay relación directa. VISOC sirve para armar el informe técnico de la visita y GEDO sirve para que el expediente siga su curso. La transferencia es completamente manual: cada técnico debe crear el PDF del informe en VISOC y adjuntarlo manualmente al expediente en GEDO. No hay información duplicada, pero sí trabajo duplicado.
+
+**Entrevistador/a:**
+¿Quién carga cada tipo de información?
+
+**Técnico:**
+Los administrativos cargan los datos básicos de la familia que solicita: nombre, DNI, localidad. Nosotros los técnicos cargamos solo tres cosas: clasificación, coordenadas GPS y fotos de la visita. La carga administrativa es la mayor parte, nosotros agregamos lo específico del relevamiento en campo.
+
+**Entrevistador/a:**
+¿Cómo planificás las visitas?
+
+**Técnico:**
+Depende de la zona. Si son viviendas del interior, planifico un día antes y programo un viaje para visitar varias familias en el mismo departamento. Para Capital y La Banda puedo ir cualquier día laboral. Evalúo los expedientes asignados, descargo la información si es necesaria, ubico las familias en un mapa o bosquejo personal, y organizo la ruta para ser lo más eficiente posible.
+
+**Entrevistador/a:**
+¿Qué herramientas usás en campo?
+
+**Técnico:**
+Llevo un cuaderno manual donde anoto toda la información útil: datos extra de la familia, cantidad de habitantes, personas con discapacidad, mayores con problemas. También uso una aplicación GPS en el celular que funciona offline vía satélite. Ahí cargo el número de expediente, nombre de la familia, localidad, asociación y una clasificación preliminar. Hago captura de pantalla para el informe, pero la aplicación no está vinculada con VISOC ni GEDO, es solo una herramienta personal de apoyo.
+
+**Entrevistador/a:**
+¿Qué datos capturás durante la visita?
+
+**Técnico:**
+Verifico la cantidad de habitantes actual, que a veces difiere del expediente. Registro si hay familiares con enfermedad, discapacidad o personas mayores. Tomo fotos del frente, fondo, laterales e interior de la vivienda. Hago una clasificación preliminar en la app (1A, 2A, 2B) que me sirve después para la clasificación definitiva en oficina. También corroboro que los datos del expediente coincidan con la realidad: a veces el expediente dice una cosa y en campo encuentro otra situación diferente.
+
+**Entrevistador/a:**
+¿Qué hacés con la clasificación en campo?
+
+**Técnico:**
+Informo a la familia sobre el programa y sus requisitos, pero no le aseguro si la vivienda será aprobada. La clasificación definitiva la hago en la oficina. En campo identifico prioridades urgentes: familias con discapacitados, personas mayores, viviendas con riesgo de derrumbe o casos de incendio. Los casos dudosos que quizás no califiquen para el programa los derivo para evaluación de trabajadora social, ya que nosotros somos técnicos y no tenemos formación profesional en clasificación social.
+
+**Entrevistador/a:**
+¿Cómo generás el informe cuando volvés?
+
+**Técnico:**
+Primero organizo toda la información en la computadora por departamento, fechas y lugares. Luego sigo estos pasos: cargo las coordenadas, clasificación y observaciones en VISOC para generar la planilla técnica. Mientras armo el Word con las fotos, voy evaluando la clasificación porque a veces veo cosas en las fotos que no noté en campo. Convierto ambos documentos a PDF y los combino en un solo informe completo. Creo un número de nota en GEDO, adjunto el informe, guardo ese número en mi Excel personal, entro al expediente de la familia y adjunto la nota con todo. Finalmente hago el pase al área administrativa.
+
+**Entrevistador/a:**
+¿Cuánto tiempo te lleva procesar un informe?
+
+**Técnico:**
+Entre 10 y 30 minutos por expediente, dependiendo de la capacidad del técnico y las herramientas disponibles. Es un trabajo muy minucioso: un error en una foto, una coordenada mal cargada o una clasificación incorrecta puede afectar la aprobación o rechazo de la vivienda, y eso retrasa todo el proceso.
+
+**Entrevistador/a:**
+¿Cuál es el principal problema de este proceso?
+
+**Técnico:**
+El problema mayor es cargar los datos dos veces. En campo debo cargar manualmente todo en la aplicación GPS mientras le explico el programa a la familia. Luego en oficina debo volver a cargar la misma información en VISOC: coordenadas y clasificación. Al no estar vinculadas las herramientas, hacemos doble trabajo. Si la aplicación estuviera integrada con VISOC, ahorraríamos mucho tiempo en la creación de informes.
+
+**Entrevistador/a:**
+¿Tenés información de lo que pasa después con el expediente?
+
+**Técnico:**
+No. Una vez que paso el informe al área administrativa, no recibo información del ministerio sobre si la vivienda fue aprobada o no, si fue pagada o está en construcción. Normalmente las ONGs o municipios me informan cuando han sido aprobados y van a comenzar la obra. En el mejor de los casos me entero así y puedo hacer el seguimiento de construcción. Pero hay casos donde no me informan y me entero cuando la vivienda ya está finalizada. No hay un informe directo del sistema.
+
+**Entrevistador/a:**
+¿Qué información se pierde actualmente?
+
+**Técnico:**
+Pierdo información del avance de obra. Realizo fotos del avance cuando puedo, pero no las cargo en VISOC porque toma mucho tiempo y ese tiempo prefiero usarlo para hacer otros informes o visitas, especialmente en Capital y La Banda. La demanda es tan grande que no puedo visitar todas las obras en progreso. Como la aplicación y VISOC no están vinculadas, el proceso manual hace que pierda ese registro.
+
+**Entrevistador/a:**
+¿Qué mejoras te gustaría tener?
+
+**Técnico:**
+Primero, una aplicación vinculada con VISOC. Que toda la información que cargo en campo quede automáticamente impactada en VISOC, y en oficina solo tenga que generar el PDF para GEDO. Eso eliminaría la doble carga de datos. Segundo, tener mejor visibilidad de los expedientes que visité: poder ver si fueron aprobados, rechazados o están en construcción. Así evitaría reclamos por falta de seguimiento. Tercero, que GEDO nos avise automáticamente cuando los expedientes que visitamos han sido aprobados. Sería muy útil para hacer el seguimiento proactivo de las obras.
 `;
 
   return (
@@ -162,32 +251,45 @@ La idea es que la herramienta permita una visualización geográfica más precis
               </button>
             </div>
 
-            {/* Card 2 - Técnicos y Personal de Campo */}
+            {/* Card 2 - Técnico de Campo */}
             <div className="bg-white rounded-2xl shadow-xl border border-neutral-300 p-8 hover:shadow-2xl transition-all duration-300">
               <div className="flex items-center gap-2 mb-3">
-                <svg className="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <svg className="w-5 h-5 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
-                <span className="text-sm font-semibold text-neutral-500">Próximamente</span>
+                <span className="text-sm font-semibold text-neutral-600">Enero de 2025</span>
               </div>
               <h2 className="text-2xl font-bold text-neutral-900 mb-3">
-                Entrevista Específica: Flujo de Datos y Puntos Críticos
+                Técnico de Campo – Proceso Operativo y Requerimientos del Sistema
               </h2>
               <p className="text-neutral-700 mb-4 leading-relaxed">
-                Entrevista planificada con técnicos de campo y personal de oficina para diagnosticar el ciclo completo de vida del dato, desde la captura en terreno hasta el reporte en GEDO. Se abordarán fricciones operativas específicas, tiempos de transcripción manual, validación de datos y requerimientos para una solución de automatización priorizando la calidad del dato y la eficiencia operativa.
+                En esta segunda entrevista, un técnico de campo compartió su experiencia detallada del proceso operativo diario: desde la asignación de expedientes hasta la carga final de datos. Se validó el flujo completo de trabajo de campo, identificando los cuellos de botella críticos. El técnico expuso el problema de la doble carga manual de datos (10-30 min por expediente), la falta de retroalimentación sobre expedientes aprobados, y la pérdida de información de avance de obra. Se definieron tres mejoras prioritarias: app móvil integrada, dashboard de seguimiento, y sistema de notificaciones automáticas.
               </p>
               <div className="bg-neutral-50 rounded-lg p-4 mb-4">
-                <h3 className="font-semibold text-neutral-900 mb-2 text-sm">Temas a profundizar:</h3>
+                <h3 className="font-semibold text-neutral-900 mb-2 text-sm">Temas abordados:</h3>
                 <ul className="text-sm text-neutral-700 space-y-1">
-                  <li>• Proceso de captura de datos con app de campo</li>
-                  <li>• Flujo de transcripción manual a VISOC</li>
-                  <li>• Integración y transferencia a GEDO</li>
-                  <li>• Impacto de la tecnología en la tarea social</li>
+                  <li>• Proceso completo desde solicitud hasta aprobación</li>
+                  <li>• Doble carga de datos: App GPS → VISOC (manual)</li>
+                  <li>• Sistemas desconectados (VISOC ↔ GEDO)</li>
+                  <li>• Falta de retroalimentación y seguimiento</li>
                 </ul>
               </div>
-              <p className="text-sm italic text-neutral-500">
-                <span className="font-semibold">Reflexión:</span> Entrevista clave para cuantificar el cuello de botella y definir requerimientos técnicos específicos.
+              <p className="text-sm italic text-neutral-500 mb-6">
+                <span className="font-semibold">Reflexión:</span> Validación operativa completa que confirma problemáticas y define requerimientos técnicos para el dashboard.
               </p>
+              <button
+                onClick={() => setShowModal2(true)}
+                className="group w-full bg-neutral-900 text-white font-bold py-3 px-6 rounded-xl hover:bg-neutral-800 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+                Ver entrevista completa
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
             </div>
 
             {/* Card 3 - Próximo encuentro (duplicado de la imagen) */}
@@ -291,6 +393,101 @@ La idea es que la herramienta permita una visualización geográfica más precis
               <div className="bg-neutral-50 px-6 py-4 flex justify-end border-t border-neutral-200 rounded-b-2xl flex-shrink-0">
                 <button
                   onClick={() => setShowModal(false)}
+                  className="bg-neutral-900 hover:bg-neutral-800 text-white font-bold py-2 px-6 rounded-lg transition-all duration-300"
+                >
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Modal 2 - Segunda Entrevista */}
+      {showModal2 && (
+        <div className="fixed inset-0 z-[9999] overflow-y-auto">
+          {/* Overlay */}
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 transition-opacity"
+            onClick={() => setShowModal2(false)}
+          ></div>
+
+          {/* Modal Container */}
+          <div className="flex min-h-screen items-center justify-center p-4">
+            <div
+              className="relative bg-white rounded-2xl shadow-2xl max-w-5xl w-full max-h-[90vh] flex flex-col"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header */}
+              <div className="bg-neutral-900 px-6 py-4 flex items-center justify-between rounded-t-2xl flex-shrink-0">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                    <svg className="w-5 h-5 text-neutral-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Entrevista con Técnico de Campo</h3>
+                    <p className="text-sm text-neutral-300">Proceso Operativo y Requerimientos</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setShowModal2(false)}
+                  className="text-white hover:bg-white/10 rounded-full p-2 transition-colors flex-shrink-0"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Content */}
+              <div className="px-6 py-6 overflow-y-auto flex-1">
+                <div className="space-y-6">
+                  {interview2Content.split('\n\n').map((section, idx) => {
+                    if (section.trim().startsWith('**Técnico:**') || section.trim().startsWith('**Entrevistador/a:**')) {
+                      const isInterviewer = section.includes('Entrevistador');
+                      const text = section.replace(/\*\*(Técnico|Entrevistador\/a):\*\*\s*/, '');
+
+                      return (
+                        <div key={idx} className={`flex gap-3 ${!isInterviewer ? 'justify-end' : ''}`}>
+                          {!isInterviewer && (
+                            <div className="w-8 h-8 bg-neutral-900 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                              T
+                            </div>
+                          )}
+                          <div className={`max-w-[85%] ${isInterviewer ? 'bg-neutral-100' : 'bg-neutral-50'} rounded-2xl p-4 border ${isInterviewer ? 'border-neutral-200' : 'border-neutral-300'}`}>
+                            <div className="text-xs font-semibold text-neutral-500 mb-2">
+                              {isInterviewer ? 'Entrevistador' : 'Técnico de Campo'}
+                            </div>
+                            <p className="text-sm text-neutral-800 leading-relaxed whitespace-pre-wrap">{text}</p>
+                          </div>
+                          {isInterviewer && (
+                            <div className="w-8 h-8 bg-neutral-200 rounded-full flex items-center justify-center text-neutral-700 font-bold text-sm flex-shrink-0">
+                              P
+                            </div>
+                          )}
+                        </div>
+                      );
+                    }
+
+                    if (section.trim().startsWith('#')) {
+                      return (
+                        <h2 key={idx} className="text-xl font-bold text-neutral-900 mt-8 mb-4 pb-3 border-b border-neutral-200">
+                          {section.replace('#', '').trim()}
+                        </h2>
+                      );
+                    }
+
+                    return null;
+                  })}
+                </div>
+              </div>
+
+              {/* Footer */}
+              <div className="bg-neutral-50 px-6 py-4 flex justify-end border-t border-neutral-200 rounded-b-2xl flex-shrink-0">
+                <button
+                  onClick={() => setShowModal2(false)}
                   className="bg-neutral-900 hover:bg-neutral-800 text-white font-bold py-2 px-6 rounded-lg transition-all duration-300"
                 >
                   Cerrar

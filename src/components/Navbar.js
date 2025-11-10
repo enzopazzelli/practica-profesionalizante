@@ -14,9 +14,10 @@ export default function Navbar() {
     { href: "/santiago", label: "Sobre Santiago" },
     { href: "/organizacion", label: "Organización" },
     { href: "/entrevistas", label: "Entrevistas" },
-    { href: "/problematica", label: "Problemática" },
-    { href: "/analisis", label: "Análisis" },
-    { href: "/conclusiones", label: "Conclusiones" },
+    { href: "/problematica", label: "Análisis de Datos" },
+    { href: "/dashboard-propuesto", label: "Dashboard", badge: "Propuesta" },
+    { href: "/mapa", label: "Mapa" },
+    { href: "/impacto", label: "Impacto Social" },
   ];
 
   return (
@@ -50,13 +51,18 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-3 py-2 font-medium rounded-lg transition-all duration-200 ${
+                  className={`px-3 py-2 font-medium rounded-lg transition-all duration-200 flex items-center gap-2 ${
                     isActive
                       ? 'bg-blue-100 text-neutral-900'
                       : 'text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100'
                   }`}
                 >
                   {link.label}
+                  {link.badge && (
+                    <span className="px-2 py-0.5 bg-amber-100 text-amber-800 text-xs font-bold rounded-full">
+                      {link.badge}
+                    </span>
+                  )}
                 </Link>
               );
             })}
@@ -89,13 +95,18 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`block px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
+                  className={`block px-4 py-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-between ${
                     isActive
                       ? 'bg-blue-100 text-neutral-900'
                       : 'text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100'
                   }`}
                 >
-                  {link.label}
+                  <span>{link.label}</span>
+                  {link.badge && (
+                    <span className="px-2 py-0.5 bg-amber-100 text-amber-800 text-xs font-bold rounded-full">
+                      {link.badge}
+                    </span>
+                  )}
                 </Link>
               );
             })}

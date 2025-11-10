@@ -1,0 +1,31 @@
+# Dependencias Adicionales para el Proyecto Post-Entrevista
+
+## Instalar con npm:
+
+npm install leaflet react-leaflet
+
+## Detalles de los paquetes:
+
+1. leaflet v1.9.4
+   - Librería de mapas interactivos
+   - Open source, muy utilizada
+   - Ligera y rápida
+
+2. react-leaflet v4.2.1
+   - Wrapper oficial de React para Leaflet
+   - Facilita la integración con Next.js
+   - Compatible con React 18+
+
+## Verificar instalación:
+
+Después de instalar, verificar en package.json que aparezcan:
+
+"dependencies": {
+  ...
+  "leaflet": "^1.9.4",
+  "react-leaflet": "^4.2.1"
+}
+
+## Nota:
+
+Recharts ya está instalado en el proyecto, no requiere instalación adicional.

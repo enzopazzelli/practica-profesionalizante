@@ -1,0 +1,41 @@
+Asunto: Solicitud de Entrevista - Práctica Profesionalizante ITSE
+
+Estimado/a [Nombre del Técnico],
+
+Somos estudiantes del Instituto Técnico Superior de Estudios Superiores (ITSE) y estamos desarrollando nuestra Práctica Profesionalizante enfocada en la Subsecretaría de Promoción Humana y Relaciones Institucionales con la Comunidad, específicamente en el programa de vivienda social.
+
+Nos comunicamos para solicitar una entrevista de aproximadamente 30-35 minutos con el objetivo de documentar el proceso actual de gestión de datos del programa, desde la recepción de casos hasta el registro en GEDO.
+
+OBJETIVO DE LA ENTREVISTA:
+• Comprender el flujo completo de trabajo y manejo de información
+• Identificar los sistemas utilizados (GEDO, VISOC, otros)
+• Documentar los puntos del proceso donde se toman decisiones
+• Conocer los principales desafíos en el manejo de datos
+
+ALCANCE DEL PROYECTO:
+Nuestro trabajo académico consiste en:
+1. Documentar el proceso actual mediante un diagrama de flujo
+2. Identificar oportunidades de mejora en la gestión de datos
+3. Diseñar propuestas de visualización (dashboard, mapas)
+
+Aclaramos que NO vamos a evaluar el trabajo realizado ni desarrollar software - solo buscamos entender el proceso real para documentarlo y proponer mejoras desde la perspectiva tecnológica.
+
+LOGÍSTICA:
+• Duración: 30-35 minutos
+• Modalidad: Presencial / Videollamada / Teléfono (como prefiera)
+• Fecha: A coordinar según su disponibilidad
+
+Adjuntamos un documento con los temas que abordaremos durante la conversación, para que pueda familiarizarse con las preguntas previamente si así lo desea.
+
+¿Tendría disponibilidad en los próximos días para esta entrevista?
+
+Quedamos atentos a su respuesta y agradecemos de antemano su colaboración.
+
+Saludos cordiales,
+
+[Nombre del Estudiante]
+[Nombre de Compañeros/as]
+Práctica Profesionalizante
+Instituto Técnico Superior de Estudios Superiores (ITSE)
+Email: _______________
+Teléfono: _______________

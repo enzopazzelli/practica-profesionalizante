@@ -1,0 +1,66 @@
+{
+  "resumen": {
+    "total_viviendas": 1247,
+    "total_localidades": 89,
+    "total_instituciones": 23,
+    "total_departamentos": 27
+  },
+  "por_clasificacion": {
+    "1A": 836,
+    "2A": 287,
+    "Derrumbe": 100,
+    "Otra": 24
+  },
+  "por_estado": {
+    "En relevamiento": 561,
+    "Aprobado": 374,
+    "En construcción": 249,
+    "Terminado": 63
+  },
+  "por_departamento": [
+    { "departamento": "Capital", "cantidad": 340 },
+    { "departamento": "Banda", "cantidad": 180 },
+    { "departamento": "Robles", "cantidad": 95 },
+    { "departamento": "Río Hondo", "cantidad": 78 },
+    { "departamento": "Choya", "cantidad": 65 },
+    { "departamento": "Taboada", "cantidad": 58 },
+    { "departamento": "Moreno", "cantidad": 52 },
+    { "departamento": "Copo", "cantidad": 48 },
+    { "departamento": "Ojo de Agua", "cantidad": 45 },
+    { "departamento": "Quebrachos", "cantidad": 42 },
+    { "departamento": "Figueroa", "cantidad": 38 },
+    { "departamento": "Aguirre", "cantidad": 35 },
+    { "departamento": "Alberdi", "cantidad": 32 },
+    { "departamento": "Atamisqui", "cantidad": 28 },
+    { "departamento": "Avellaneda", "cantidad": 25 },
+    { "departamento": "Belgrano", "cantidad": 22 },
+    { "departamento": "Castellanos", "cantidad": 18 },
+    { "departamento": "Guasayán", "cantidad": 15 },
+    { "departamento": "Jiménez", "cantidad": 12 },
+    { "departamento": "Loreto", "cantidad": 10 },
+    { "departamento": "Pellegrini", "cantidad": 8 }
+  ],
+  "evolucion_mensual_2024": [
+    { "mes": "Enero", "cantidad": 87, "acumulado": 87 },
+    { "mes": "Febrero", "cantidad": 124, "acumulado": 211 },
+    { "mes": "Marzo", "cantidad": 156, "acumulado": 367 },
+    { "mes": "Abril", "cantidad": 143, "acumulado": 510 },
+    { "mes": "Mayo", "cantidad": 167, "acumulado": 677 },
+    { "mes": "Junio", "cantidad": 178, "acumulado": 855 },
+    { "mes": "Julio", "cantidad": 189, "acumulado": 1044 },
+    { "mes": "Agosto", "cantidad": 203, "acumulado": 1247 }
+  ],
+  "instituciones_ejecutoras": [
+    { "nombre": "Cáritas Santiago del Estero", "cantidad_proyectos": 342 },
+    { "nombre": "Municipalidad Capital", "cantidad_proyectos": 198 },
+    { "nombre": "Municipalidad La Banda", "cantidad_proyectos": 156 },
+    { "nombre": "Fundación Hábitat", "cantidad_proyectos": 123 },
+    { "nombre": "ONG Techo SdE", "cantidad_proyectos": 98 },
+    { "nombre": "Fundación Vivienda Digna", "cantidad_proyectos": 87 },
+    { "nombre": "Cáritas Frías", "cantidad_proyectos": 45 },
+    { "nombre": "Cáritas Añatuya", "cantidad_proyectos": 38 },
+    { "nombre": "Municipalidad Termas", "cantidad_proyectos": 34 },
+    { "nombre": "Municipalidad Fernández", "cantidad_proyectos": 29 },
+    { "nombre": "Otras instituciones", "cantidad_proyectos": 97 }
+  ]
+}
