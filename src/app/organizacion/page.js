@@ -46,7 +46,7 @@ export default function Organizacion() {
         <div className="max-w-7xl mx-auto">
           {/* Hero Section */}
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-blue-main via-primary-600 to-red-main bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-extrabold mb-6 text-neutral-900">
               Organización del Proyecto
             </h1>
           </div>

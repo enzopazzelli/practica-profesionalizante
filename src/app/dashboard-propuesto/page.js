@@ -79,7 +79,7 @@ export default function DashboardPropuesto() {
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-4">
               <div>
                 <div className="flex items-center gap-3 mb-2">
-                  <h1 className="text-4xl font-bold text-neutral-900">
+                  <h1 className="text-5xl md:text-6xl font-extrabold mb-6 text-neutral-900">
                     {vistaActual === 'tecnico' ? 'Dashboard del Técnico' : vistaActual === 'arquitecto' ? 'Dashboard Estratégico' : 'Análisis Global de Datos'}
                   </h1>
                   <span className="px-3 py-1 bg-amber-100 text-amber-800 text-xs font-bold rounded-full border border-amber-300">

@@ -64,7 +64,7 @@ export default function ImpactoPage() {
         <div className="max-w-7xl mx-auto">
           {/* Hero Section */}
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-red-main via-blue-main to-yellow-accent bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-extrabold mb-6 text-neutral-900">
               Impacto Social del Programa
             </h1>
             <p className="text-xl text-neutral-600 max-w-3xl mx-auto">

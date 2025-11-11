@@ -41,7 +41,7 @@ export default function SantiagoPage() {
         <div className="max-w-7xl mx-auto">
           {/* Hero Section */}
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-yellow-accent via-red-main to-blue-main bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-extrabold mb-6 text-neutral-900">
               Santiago del Estero
             </h1>
             <h2 className="text-3xl md:text-4xl font-bold text-neutral-700 max-w-3xl mx-auto">

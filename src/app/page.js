@@ -12,7 +12,7 @@ export default function Home() {
       <section className="pt-32 pb-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-5xl md:text-7xl font-extrabold mb-6 bg-gradient-to-r from-blue-main via-primary-600 to-red-main bg-clip-text text-transparent leading-tight">
+            <h1 className="text-5xl md:text-6xl font-extrabold mb-6 text-neutral-900">
               Práctica Profesionalizante – ITSE
             </h1>
             <p className="text-xl md:text-2xl text-neutral-600 max-w-4xl mx-auto leading-relaxed mb-8">
@@ -52,6 +52,36 @@ export default function Home() {
           {/* Timeline */}
           <div className="mb-16">
             <Timeline />
+          </div>
+
+          {/* Equipo Section */}
+          <div className="mb-16">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-10 bg-gradient-to-r from-red-main via-blue-main to-yellow-accent bg-clip-text text-transparent">
+              Equipo
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+              {[
+                "Pablo Castillo",
+                "Sara Lombardi",
+                "Valeria Martinetti",
+                "Santiago Gallardo",
+                "Enzo Pazzelli"
+              ].map((nombre, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-xl shadow-lg p-6 border border-neutral-200 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-center"
+                >
+                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-main to-primary-600 rounded-full flex items-center justify-center">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                  </div>
+                  <h3 className="font-bold text-lg text-neutral-900">
+                    {nombre}
+                  </h3>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Santiago CTA */}

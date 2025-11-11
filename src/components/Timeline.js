@@ -1,12 +1,12 @@
 export default function Timeline() {
-  const currentStep = 3; // Etapa actual: Identificación de problemáticas
+  const currentStep = 5; // Etapa actual: Conclusiones finales
 
   const steps = [
     { title: "Encuentro inicial", status: "completed" },
     { title: "Entrevistas institucionales", status: "completed" },
-    { title: "Identificación de problemáticas", status: "current" },
-    { title: "Análisis de datos", status: "upcoming" },
-    { title: "Conclusiones finales", status: "upcoming" },
+    { title: "Identificación de problemáticas", status: "completed" },
+    { title: "Análisis de datos", status: "completed" },
+    { title: "Conclusiones finales", status: "current" },
   ];
 
   return (
