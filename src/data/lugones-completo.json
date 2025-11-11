@@ -1,0 +1,182 @@
+{
+  "metadata": {
+    "solicitante_tipo": "COM",
+    "solicitante_nombre": "COMISION MUNICIPAL LUGONES",
+    "departamento": "AVELLANEDA",
+    "localidad": "LUGONES",
+    "fecha_reporte": "31/10/25"
+  },
+  "totales": {
+    "solicitadas": 107,
+    "finalizadas": 78,
+    "desaprobadas": 2,
+    "sin_finalizar": 27,
+    "con_reclamo": 8,
+    "en_proceso": 18,
+    "sin_iniciar": 9
+  },
+  "por_tipo": {
+    "URB": 88,
+    "RUR": 17,
+    "ECO": 2
+  },
+  "por_clasificacion": {
+    "1a": 92,
+    "2a": 11,
+    "2b": 1,
+    "4b": 1,
+    "5f": 1,
+    "Otra": 1
+  },
+  "por_drm": {
+    "0": 38,
+    "1": 3,
+    "2": 64,
+    "3": 2
+  },
+  "por_afo": {
+    "0": 29,
+    "100": 78
+  },
+  "evolucion_temporal": [
+    { "año": "2015", "solicitadas": 11, "finalizadas": 11 },
+    { "año": "2016", "solicitadas": 24, "finalizadas": 24 },
+    { "año": "2017", "solicitadas": 7, "finalizadas": 7 },
+    { "año": "2018", "solicitadas": 19, "finalizadas": 19 },
+    { "año": "2019", "solicitadas": 23, "finalizadas": 17 },
+    { "año": "2020", "solicitadas": 2, "finalizadas": 0 },
+    { "año": "2021", "solicitadas": 0, "finalizadas": 0 },
+    { "año": "2022", "solicitadas": 14, "finalizadas": 0 },
+    { "año": "2023", "solicitadas": 7, "finalizadas": 0 }
+  ],
+  "viviendas_desaprobadas": [
+    {
+      "id": 1,
+      "titular": "VILLARREAL SANDRA VANESA",
+      "expediente": "3494-54-2020",
+      "fecha_solicitud": "28/02/2020",
+      "tipo": "URB",
+      "clasificacion": "5f",
+      "drm": 0,
+      "motivo_probable": "Clasificación 5f - No aplica al programa",
+      "estado": "DESAPROBADO"
+    },
+    {
+      "id": 2,
+      "titular": "MORENO EUGENIA NOEMI",
+      "expediente": "2128886-2022",
+      "fecha_solicitud": "07/06/2022",
+      "tipo": "URB",
+      "clasificacion": "1a",
+      "drm": 0,
+      "motivo_probable": "Expediente DES (Desestimado) - Posible falta de documentación",
+      "estado": "DESAPROBADO"
+    }
+  ],
+  "viviendas_muestra": [
+    {
+      "titular": "RODRIGUEZ MIGUEL ANGEL",
+      "expediente": "327-54-2018",
+      "fecha_solicitud": "16/01/2018",
+      "tipo": "ECO",
+      "drm": 0,
+      "clasificacion": "2a",
+      "activacion": "03/09/18",
+      "afo": 0,
+      "fin_obra": null,
+      "estado": "Sin Finalizar"
+    },
+    {
+      "titular": "PALAVECINO JAHANA MARISEL",
+      "expediente": "16100-54-2018",
+      "fecha_solicitud": "01/10/2018",
+      "tipo": "URB",
+      "drm": 2,
+      "clasificacion": "1a",
+      "activacion": "09/11/18",
+      "acta_digital": "2022-00798757",
+      "afo": 100,
+      "fin_obra": "08/03/22",
+      "estado": "Finalizada"
+    },
+    {
+      "titular": "ANRIQUEZ BEBA MONICA",
+      "expediente": "16212-54-2018",
+      "fecha_solicitud": "01/10/2018",
+      "tipo": "URB",
+      "drm": 2,
+      "clasificacion": "1a",
+      "activacion": "04/06/19",
+      "acta_digital": "2022-00798669",
+      "afo": 100,
+      "fin_obra": "08/03/22",
+      "exp_reclamo": null,
+      "estado": "Finalizada"
+    },
+    {
+      "titular": "LEMOS MARINA MARIEL",
+      "expediente": "6498-54-2019",
+      "fecha_solicitud": "17/04/2019",
+      "tipo": "URB",
+      "drm": 2,
+      "clasificacion": "1a",
+      "activacion": "08/03/22",
+      "acta_digital": "2022-00798706",
+      "afo": 100,
+      "fin_obra": "08/03/22",
+      "exp_reclamo": "66080-2021",
+      "estado": "Finalizada"
+    },
+    {
+      "titular": "PONCE DAMAZO",
+      "expediente": "2128915-2022",
+      "fecha_solicitud": "07/06/2022",
+      "tipo": "URB",
+      "drm": 2,
+      "clasificacion": "1a",
+      "activacion": "04/12/23",
+      "acta_digital": "10015801-2023",
+      "afo": 100,
+      "fin_obra": "06/12/23",
+      "estado": "Finalizada"
+    },
+    {
+      "titular": "ROJAS HECTOR FRANCISCO",
+      "expediente": "2128857-2022",
+      "fecha_solicitud": "07/06/2022",
+      "tipo": "URB",
+      "drm": 0,
+      "clasificacion": "1a",
+      "activacion": null,
+      "afo": 0,
+      "fin_obra": null,
+      "estado": "Sin Iniciar"
+    },
+    {
+      "titular": "PACHECO VIRGILIO",
+      "expediente": "2569817-2022",
+      "fecha_solicitud": "08/07/2022",
+      "tipo": "URB",
+      "drm": 2,
+      "clasificacion": "1a",
+      "activacion": "04/12/23",
+      "acta_digital": "10015820-2023",
+      "afo": 100,
+      "fin_obra": "06/12/23",
+      "estado": "Finalizada"
+    },
+    {
+      "titular": "CORONEL AMALIA",
+      "expediente": "2569975-2022",
+      "fecha_solicitud": "08/07/2022",
+      "tipo": "URB",
+      "drm": 1,
+      "clasificacion": "1a",
+      "activacion": "04/12/23",
+      "acta_digital": "10015846-2023",
+      "afo": 100,
+      "fin_obra": "06/12/23",
+      "estado": "Finalizada"
+    }
+  ]
+}
