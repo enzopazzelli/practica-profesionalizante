@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama de Flujo - Proceso de Vivienda Social</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            line-height: 1.4;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
+            color: white;
+            border-radius: 8px;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .phase {
+            margin: 30px 0;
+        }
+        
+        .phase-title {
+            background: #3498DB;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .box {
+            background: white;
+            border: 2px solid #BDC3C7;
+            border-radius: 8px;
+            padding: 18px;
+            margin: 15px auto;
+            max-width: 600px;
+            position: relative;
+        }
+        
+        .box-title {
+            font-weight: bold;
+            color: #2C3E50;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        
+        .box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .box li {
+            padding: 4px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 13px;
+            color: #34495E;
+        }
+        
+        .box li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #27AE60;
+            font-weight: bold;
+        }
+        
+        .arrow {
+            text-align: center;
+            color: #7F8C8D;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        
+        .critical-point {
+            background: #FFF3CD;
+            border: 2px solid #FFC107;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px auto;
+            max-width: 600px;
+            text-align: center;
+        }
+        
+        .critical-point strong {
+            color: #E67E22;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .critical-point p {
+            font-size: 12px;
+            color: #856404;
+            margin: 4px 0;
+        }
+        
+        .decision {
+            background: #E8F4F8;
+            border: 2px solid #3498DB;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px auto;
+            max-width: 400px;
+            text-align: center;
+            font-weight: bold;
+            color: #2C3E50;
+        }
+        
+        .flow-split {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 20px 0;
+        }
+        
+        .flow-option {
+            text-align: center;
+            flex: 1;
+            max-width: 200px;
+        }
+        
+        .flow-label {
+            font-weight: bold;
+            color: #E74C3C;
+            margin: 10px 0;
+        }
+        
+        .flow-label.yes {
+            color: #27AE60;
+        }
+        
+        .actor-box {
+            background: #ECF0F1;
+            border-left: 4px solid #3498DB;
+            padding: 12px;
+            margin: 10px auto;
+            max-width: 600px;
+            font-size: 13px;
+        }
+        
+        .end-box {
+            background: #27AE60;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            margin: 20px auto;
+            max-width: 300px;
+        }
+        
+        .legend {
+            margin-top: 40px;
+            padding: 20px;
+            background: #F8F9FA;
+            border-radius: 8px;
+            page-break-before: always;
+        }
+        
+        .legend h2 {
+            color: #2C3E50;
+            font-size: 18px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #3498DB;
+            padding-bottom: 8px;
+        }
+        
+        .legend-section {
+            margin: 20px 0;
+        }
+        
+        .legend-section h3 {
+            color: #34495E;
+            font-size: 14px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .legend-item {
+            margin: 10px 0;
+            padding: 12px;
+            background: white;
+            border-left: 4px solid #E67E22;
+            font-size: 12px;
+        }
+        
+        .legend-item strong {
+            display: block;
+            color: #E67E22;
+            margin-bottom: 5px;
+        }
+        
+        .system-box {
+            background: white;
+            border: 2px solid #9B59B6;
+            border-radius: 6px;
+            padding: 12px;
+            margin: 8px 0;
+            font-size: 12px;
+        }
+        
+        .system-box strong {
+            color: #9B59B6;
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>PROCESO DE GESTIÓN DE VIVIENDA SOCIAL</h1>
+            <p>Subsecretaría de Promoción Humana - Santiago del Estero</p>
+            <p style="font-size: 12px; margin-top: 10px;">De la Solicitud a la Vivienda Terminada</p>
+        </div>
+
+        <!-- FASE 1 -->
+        <div class="phase">
+            <div class="phase-title">FASE 1: Inicio y Relevamiento</div>
+            
+            <div class="actor-box">
+                <strong>INSTITUCIÓN/ONG/MUNICIPIO</strong>
+                Se acerca a la Subsecretaría
+            </div>
+            
+            <div class="arrow">↓</div>
+            
+            <div class="box">
+                <div class="box-title">SUBSECRETARÍA ORIENTA</div>
+                <ul>
+                    <li>Requisitos</li>
+                    <li>Procedimientos</li>
+                </ul>
+            </div>
+            
+            <div class="arrow">↓</div>
+            
+            <div class="box">
+                <div class="box-title">RELEVAMIENTO TERRITORIAL</div>
+                <p style="font-size: 12px; margin-bottom: 8px; color: #7F8C8D;">Técnico visita el lugar:</p>
+                <ul>
+                    <li>Captura coordenadas GPS</li>
+                    <li>Toma fotos de vivienda</li>
+                    <li>Clasifica (1A, 2A, derrumbe, etc.)</li>
+                    <li>Recolecta datos del beneficiario</li>
+                    <li>Guarda datos en dispositivo</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- FASE 2 -->
+        <div class="phase">
+            <div class="phase-title">FASE 2: Carga y Preparación de Documentación</div>
+            
+            <div class="box">
+                <div class="box-title">INSTITUCIÓN PREPARA CARPETA</div>
+                <ul>
+                    <li>Carga manual a VISOC (sistema local)</li>
+                    <li>Genera PDF con fotos y coordenadas</li>
+                    <li>Sube documentación al expediente</li>
+                </ul>
+            </div>
+            
+            <div class="arrow">↓</div>
+            
+            <div class="critical-point">
+                <strong>⚠️ PUNTO CRÍTICO 1</strong>
+                <p><strong>Problema:</strong> Posibles errores de transcripción</p>
+                <p><strong>Impacto:</strong> Coordenadas incorrectas, clasificaciones erróneas</p>
+            </div>
+        </div>
+
+        <!-- FASE 3 -->
+        <div class="phase">
+            <div class="phase-title">FASE 3: Verificación Administrativa</div>
+            
+            <div class="box">
+                <div class="box-title">INSTITUCIÓN PRESENTA REQUISITOS</div>
+                <ul>
+                    <li>Documentación legal al día</li>
+                    <li>Cuenta bancaria habilitada</li>
+                    <li>Registro en ARCA</li>
+                    <li>Personería jurídica vigente</li>
+                </ul>
+            </div>
+            
+            <div class="arrow">↓</div>
+            
+            <div class="decision">¿Cumple con requisitos?</div>
+            
+            <div class="flow-split">
+                <div class="flow-option">
+                    <div class="flow-label">NO</div>
+                    <div class="arrow">↓</div>
+                    <div class="box" style="max-width: 180px; padding: 12px; font-size: 12px;">
+                        <div class="box-title" style="font-size: 13px;">Institución subsana observaciones</div>
+                    </div>
+                    <div class="arrow">↑</div>
+                    <div style="font-size: 11px; color: #7F8C8D;">(vuelve a verificación)</div>
+                </div>
+                
+                <div class="flow-option">
+                    <div class="flow-label yes">SÍ</div>
+                    <div class="arrow">↓</div>
+                    <div style="padding: 30px; color: #27AE60; font-size: 12px;">Continúa al<br>registro oficial</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FASE 4 -->
+        <div class="phase">
+            <div class="phase-title">FASE 4: Registro Oficial</div>
+            
+            <div class="box">
+                <div class="box-title">CARGA A GEDO (SISTEMA OFICIAL)</div>
+                <ul>
+                    <li>Se genera número de expediente</li>
+                    <li>Datos quedan FIJOS (no editables)</li>
+                </ul>
+            </div>
+            
+            <div class="arrow">↓</div>
+            
+            <div class="critical-point">
+                <strong>⚠️ PUNTO CRÍTICO 2</strong>
+                <p><strong>Problema:</strong> Posible inconsistencia GEDO ↔ VISOC</p>
+                <p><strong>Impacto:</strong> Datos diferentes en cada sistema, dificulta auditoría</p>
+            </div>
+        </div>
+
+        <!-- FASE 5 -->
+        <div class="phase">
+            <div class="phase-title">FASE 5: Evaluación y Aprobación</div>
+            
+            <div class="box">
+                <div class="box-title">SUBSECRETARÍA EVALÚA PROYECTO</div>
+            </div>
+            
+            <div class="arrow">↓</div>
+            
+            <div class="decision">¿Proyecto aprobado?</div>
+            
+            <div class="flow-split">
+                <div class="flow-option">
+                    <div class="flow-label">NO</div>
+                    <div class="arrow">↓</div>
+                    <div class="box" style="max-width: 180px; padding: 12px; background: #ECF0F1;">
+                        <strong style="font-size: 13px;">ARCHIVO</strong>
+                    </div>
+                </div>
+                
+                <div class="flow-option">
+                    <div class="flow-label yes">SÍ</div>
+                    <div class="arrow">↓</div>
+                    <div style="padding: 30px; color: #27AE60; font-size: 12px;">Continúa a<br>ejecución</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FASE 6 -->
+        <div class="phase">
+            <div class="phase-title">FASE 6: Ejecución</div>
+            
+            <div class="box">
+                <div class="box-title">INSTITUCIÓN EJECUTA</div>
+                <ul>
+                    <li>Recibe fondos en su cuenta</li>
+                    <li>Compra materiales</li>
+                    <li>Contrata mano de obra</li>
+                    <li>Inicia construcción</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- FASE 7 -->
+        <div class="phase">
+            <div class="phase-title">FASE 7: Control y Seguimiento</div>
+            
+            <div class="box">
+                <div class="box-title">SUBSECRETARÍA MONITOREA</div>
+                <ul>
+                    <li>Verifica avances</li>
+                    <li>Institución reporta inconvenientes</li>
+                    <li>Realiza verificaciones en campo</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- FASE 8 -->
+        <div class="phase">
+            <div class="phase-title">FASE 8: Finalización</div>
+            
+            <div class="box">
+                <div class="box-title">CIERRE DEL PROYECTO</div>
+                <ul>
+                    <li>Obra terminada</li>
+                    <li>Toma de fotos "después"</li>
+                    <li>Entrega a beneficiario</li>
+                    <li>Actualización de estado en sistemas</li>
+                </ul>
+            </div>
+            
+            <div class="arrow">↓</div>
+            
+            <div class="end-box">
+                ✓ FIN - VIVIENDA ENTREGADA
+            </div>
+        </div>
+
+        <!-- LEYENDA -->
+        <div class="legend">
+            <h2>INFORMACIÓN COMPLEMENTARIA</h2>
+            
+            <div class="legend-section">
+                <h3>PUNTOS CRÍTICOS IDENTIFICADOS</h3>
+                
+                <div class="legend-item">
+                    <strong>⚠️ PUNTO CRÍTICO 1: Errores de Transcripción</strong>
+                    <p><strong>Problema:</strong> Carga manual de datos desde el campo</p>
+                    <p><strong>Impacto:</strong> Coordenadas incorrectas, clasificaciones erróneas</p>
+                </div>
+                
+                <div class="legend-item">
+                    <strong>⚠️ PUNTO CRÍTICO 2: Inconsistencia entre Sistemas</strong>
+                    <p><strong>Problema:</strong> GEDO (oficial) no editable vs VISOC (local) editable</p>
+                    <p><strong>Impacto:</strong> Datos diferentes en cada sistema, dificulta auditoría</p>
+                </div>
+                
+                <div class="legend-item">
+                    <strong>⚠️ PUNTO CRÍTICO 3: Falta de Visualización</strong>
+                    <p><strong>Problema:</strong> No hay herramientas para ver datos geográficamente</p>
+                    <p><strong>Impacto:</strong> Dificulta análisis territorial y toma de decisiones</p>
+                </div>
+            </div>
+            
+            <div class="legend-section">
+                <h3>ACTORES PRINCIPALES</h3>
+                
+                <div class="actor-box">
+                    <strong>INSTITUCIÓN/ONG/MUNICIPIO</strong>
+                    Rol: Ejecutor del proyecto, relevamiento inicial
+                </div>
+                
+                <div class="actor-box">
+                    <strong>TÉCNICO DE CAMPO</strong>
+                    Rol: Relevamiento territorial, captura de datos
+                </div>
+                
+                <div class="actor-box">
+                    <strong>SUBSECRETARÍA</strong>
+                    Rol: Orientación, aprobación, control, financiamiento
+                </div>
+                
+                <div class="actor-box">
+                    <strong>BENEFICIARIO</strong>
+                    Rol: Receptor final de la vivienda
+                </div>
+            </div>
+            
+            <div class="legend-section">
+                <h3>SISTEMAS INVOLUCRADOS</h3>
+                
+                <div class="system-box">
+                    <strong>VISOC (Sistema Local)</strong>
+                    <p><strong>Características:</strong> Base de datos operativa, EDITABLE</p>
+                    <p><strong>Uso:</strong> Gestión diaria, permite correcciones</p>
+                </div>
+                
+                <div class="system-box">
+                    <strong>GEDO (Sistema Oficial)</strong>
+                    <p><strong>Características:</strong> Sistema electrónico oficial, NO EDITABLE</p>
+                    <p><strong>Uso:</strong> Registro formal, genera expedientes oficiales</p>
+                </div>
+                
+                <div class="system-box">
+                    <strong>Aplicación móvil (anterior)</strong>
+                    <p><strong>Características:</strong> Captura offline, sincronización posterior</p>
+                    <p><strong>Estado:</strong> Ya no se usa, ahora es captura de pantalla manual</p>
+                </div>
+            </div>
+        </div>
+        
+        <div style="margin-top: 30px; padding: 15px; background: #F8F9FA; border-radius: 8px; text-align: center; font-size: 11px; color: #7F8C8D;">
+            <p><strong>Nota:</strong> Este diagrama está basado en la primera entrevista realizada y será validado en la segunda entrevista</p>
+            <p style="margin-top: 5px;">Práctica Profesionalizante ITSE - 2025</p>
+        </div>
+    </div>
+</body>
+</html>

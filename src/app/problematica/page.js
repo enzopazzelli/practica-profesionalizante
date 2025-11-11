@@ -7,6 +7,7 @@ import Card from "@/components/Card";
 
 export default function Problematica() {
   const [localidadActiva, setLocalidadActiva] = useState('lugones');
+  const [mostrarDiagrama, setMostrarDiagrama] = useState(false);
   // Datos por localidad
   const datosLocalidades = {
     lugones: {
@@ -148,7 +149,7 @@ export default function Problematica() {
           </div>
 
           {/* Grid de Insights */}
-          <div className="grid md:grid-cols-2 gap-6 mb-16">
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
             {insights.map((p, i) => (
               <div
                 key={i}
@@ -187,6 +188,84 @@ export default function Problematica() {
               </div>
             ))}
           </div>
+
+          {/* Botón Diagrama de Flujo */}
+          <div className="text-center mb-16">
+            <button
+              onClick={() => setMostrarDiagrama(true)}
+              className="group inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-purple-800 text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 shadow-lg"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
+              </svg>
+              Ver Diagrama de Flujo del Proceso
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+            <p className="text-sm text-neutral-600 mt-3">Visualización completa del proceso de gestión de vivienda social</p>
+          </div>
+
+          {/* Modal Diagrama de Flujo */}
+          {mostrarDiagrama && (
+            <div className="fixed inset-0 z-[9999] overflow-y-auto bg-black bg-opacity-75">
+              <div className="flex min-h-screen items-center justify-center p-4">
+                <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-6xl max-h-[90vh] flex flex-col">
+                  {/* Header */}
+                  <div className="bg-purple-600 px-6 py-4 flex items-center justify-between rounded-t-2xl flex-shrink-0">
+                    <div className="flex items-center gap-3">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
+                      </svg>
+                      <div>
+                        <h3 className="text-xl font-bold text-white">Diagrama de Flujo del Proceso</h3>
+                        <p className="text-sm text-purple-100">Proceso completo de gestión de vivienda social</p>
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => setMostrarDiagrama(false)}
+                      className="text-white hover:bg-white/10 rounded-full p-2 transition-colors flex-shrink-0"
+                    >
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1 overflow-hidden">
+                    <iframe
+                      src="/diagrama-flujo-proceso.html"
+                      className="w-full h-full"
+                      style={{ minHeight: '600px' }}
+                      title="Diagrama de Flujo del Proceso"
+                    />
+                  </div>
+
+                  {/* Footer */}
+                  <div className="bg-neutral-50 px-6 py-4 flex justify-between items-center border-t border-neutral-200 rounded-b-2xl flex-shrink-0">
+                    <a
+                      href="/diagrama-flujo-proceso.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-purple-600 hover:text-purple-800 font-semibold flex items-center gap-2"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                      Abrir en nueva pestaña
+                    </a>
+                    <button
+                      onClick={() => setMostrarDiagrama(false)}
+                      className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-lg transition-all duration-300"
+                    >
+                      Cerrar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Síntesis */}
           <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl shadow-xl p-8 md:p-12 text-white mb-16">
