@@ -39,7 +39,7 @@ export default function Home() {
               </svg>
             </Link>
             <Link
-              href="/analisis"
+              href="/problematica"
               className="group flex items-center gap-2 bg-blue-main text-white-main px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-darker shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
             >
               Ver análisis
