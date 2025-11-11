@@ -8,6 +8,15 @@ import Card from "@/components/Card";
 export default function Problematica() {
   const [localidadActiva, setLocalidadActiva] = useState('lugones');
   const [mostrarDiagrama, setMostrarDiagrama] = useState(false);
+  // Lista de departamentos de Santiago del Estero
+  const departamentos = [
+    "Aguirre", "Alberdi", "Atamisqui", "Avellaneda", "Banda", "Belgrano",
+    "Broke", "Choya", "Copo", "Figueroa", "General Taboada", "Guasayán",
+    "Jiménez", "Juan F. Ibarra", "Loreto", "Mitre", "Moreno",
+    "Ojo de Agua", "Pellegrini", "Quebrachos", "Río Hondo", "Rivadavia",
+    "Robles", "Salavina", "San Martín", "Sarmiento", "Silípica"
+  ];
+
   // Datos por localidad
   const datosLocalidades = {
     lugones: {
@@ -322,49 +331,59 @@ export default function Problematica() {
               </div>
             </div>
 
-            {/* Pestañas de Localidades */}
+            {/* Selector de Localidad y Departamento */}
             <div className="mb-8">
-              <div className="flex flex-wrap gap-2 border-b-2 border-neutral-200 pb-2">
-                <button
-                  onClick={() => setLocalidadActiva('lugones')}
-                  className={`px-4 py-2 rounded-t-lg font-semibold text-sm transition-all ${
-                    localidadActiva === 'lugones'
-                      ? 'bg-blue-600 text-white shadow-md'
-                      : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
-                  }`}
-                >
-                  Lugones
-                </button>
-                <button
-                  onClick={() => setLocalidadActiva('fernandez')}
-                  className={`px-4 py-2 rounded-t-lg font-semibold text-sm transition-all ${
-                    localidadActiva === 'fernandez'
-                      ? 'bg-blue-600 text-white shadow-md'
-                      : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
-                  }`}
-                >
-                  Fernández
-                </button>
-                <button
-                  onClick={() => setLocalidadActiva('frias')}
-                  className={`px-4 py-2 rounded-t-lg font-semibold text-sm transition-all ${
-                    localidadActiva === 'frias'
-                      ? 'bg-blue-600 text-white shadow-md'
-                      : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
-                  }`}
-                >
-                  Frías
-                </button>
-                <button
-                  onClick={() => setLocalidadActiva('labanda')}
-                  className={`px-4 py-2 rounded-t-lg font-semibold text-sm transition-all ${
-                    localidadActiva === 'labanda'
-                      ? 'bg-blue-600 text-white shadow-md'
-                      : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
-                  }`}
-                >
-                  La Banda
-                </button>
+              <div className="bg-neutral-50 rounded-xl p-6 border-2 border-neutral-200">
+                <div className="grid md:grid-cols-2 gap-6">
+                  {/* Selector de Localidad */}
+                  <div>
+                    <label className="block text-sm font-bold text-neutral-700 mb-2">
+                      Seleccionar Localidad
+                    </label>
+                    <select
+                      value={localidadActiva}
+                      onChange={(e) => setLocalidadActiva(e.target.value)}
+                      className="w-full px-4 py-3 bg-white border-2 border-neutral-300 rounded-lg font-semibold text-neutral-900 focus:border-blue-600 focus:ring-2 focus:ring-blue-200 transition-all cursor-pointer hover:border-blue-400"
+                    >
+                      <option value="lugones">Lugones (Avellaneda)</option>
+                      <option value="fernandez">Fernández (Robles)</option>
+                      <option value="frias">Frías (Choya)</option>
+                      <option value="labanda">La Banda (Banda)</option>
+                    </select>
+                  </div>
+
+                  {/* Selector de Departamento (Informativo) */}
+                  <div>
+                    <label className="block text-sm font-bold text-neutral-700 mb-2">
+                      Todos los Departamentos de SdE
+                    </label>
+                    <select
+                      className="w-full px-4 py-3 bg-neutral-100 border-2 border-neutral-300 rounded-lg text-neutral-600 cursor-not-allowed"
+                      disabled
+                    >
+                      <option>{departamentos.length} departamentos en total</option>
+                      {departamentos.map((depto, index) => (
+                        <option key={index} value={depto}>{depto}</option>
+                      ))}
+                    </select>
+                    <p className="text-xs text-neutral-500 mt-2 italic">
+                      * Lista completa de departamentos de Santiago del Estero. En un sistema real, cada uno tendría sus datos.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Info de la localidad seleccionada */}
+                <div className="mt-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
+                  <div className="flex items-center gap-2">
+                    <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <p className="text-sm font-semibold text-blue-900">
+                      Visualizando: <span className="text-blue-700">{localidadSeleccionada.nombre}</span> - Departamento: <span className="text-blue-700">{localidadSeleccionada.departamento}</span>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
