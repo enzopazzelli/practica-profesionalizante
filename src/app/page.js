@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Timeline from "@/components/Timeline";
 import Link from "next/link"; // Importar Link
+import Image from "next/image"; // Importar Image
 
 export default function Home() {
   return (
@@ -61,23 +62,27 @@ export default function Home() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
               {[
-                "Pablo Castillo",
-                "Sara Lombardi",
-                "Valeria Martinetti",
-                "Santiago Gallardo",
-                "Enzo Pazzelli"
-              ].map((nombre, index) => (
+                { nombre: "Pablo Castillo", foto: "/pablo.jpeg" },
+                { nombre: "Sara Lombardi", foto: "/sara.jpeg" },
+                { nombre: "Valeria Martinetti", foto: "/vale.jpeg" },
+                { nombre: "Santiago Gallardo", foto: "/santi.jpeg" },
+                { nombre: "Enzo Pazzelli", foto: "/enzo.jpeg" }
+              ].map((miembro, index) => (
                 <div
                   key={index}
                   className="bg-white rounded-xl shadow-lg p-6 border border-neutral-200 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-center"
                 >
-                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-main to-primary-600 rounded-full flex items-center justify-center">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg>
+                  <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-gradient-to-br from-blue-main to-primary-600">
+                    <Image
+                      src={miembro.foto}
+                      alt={miembro.nombre}
+                      width={96}
+                      height={96}
+                      className="object-cover w-full h-full"
+                    />
                   </div>
                   <h3 className="font-bold text-lg text-neutral-900">
-                    {nombre}
+                    {miembro.nombre}
                   </h3>
                 </div>
               ))}
